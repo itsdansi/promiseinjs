@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator function</title>
+    <script>
+      function* generateSequence() {
+        yield "firstReturnValue";
+        yield "SecondReturnValue";
+        return "LastReturnValue";
+      }
+
+      let generator = generateSequence();
+
+      let one = generator.next();
+      let two = generator.next();
+      let three = generator.next();
+
+      alert(JSON.stringify(one)); // {value: firstReturnValue, done: false}
+      alert(JSON.stringify(two)); // {value: secondReturnValue, done: false}
+      alert(JSON.stringify(three)); // {value: thirdReturnValue, done: true}
+    </script>
+  </head>
+  <body>
+    <h3>Demo of generator function</h3>
+  </body>
+</html>
